@@ -1,8 +1,7 @@
-import numpy as np
 import cv2
 
 img = cv2.resize(cv2.imread('assets/shooting_card.jpg', 0), (0,0), fx=0.25, fy=0.25)
-template = cv2.resize(cv2.imread('assets/bullet_hole_smaller.png', 0), (0, 0), fx=1, fy=1)
+template = cv2.resize(cv2.imread('assets/bullet_hole.png', 0), (0, 0), fx=0.25, fy=0.25)
 h, w = template.shape
 
 methods = [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED, cv2.TM_CCORR,
