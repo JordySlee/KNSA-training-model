@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.resize(cv2.imread('assets/shooting_card.jpg', 0), (0,0), fx=0.25, fy=0.25)
+img = cv2.resize(cv2.imread('targets/sample1.jpg', 0), (0,0), fx=0.25, fy=0.25)
 template = cv2.resize(cv2.imread('assets/bullet_hole.png', 0), (0, 0), fx=0.25, fy=0.25)
 h, w = template.shape
 
