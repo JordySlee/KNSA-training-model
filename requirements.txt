@@ -1,0 +1,12 @@
+# pip install -r requirements.txt
+
+# Base ---------------------------------
+wheel>=0.36.2
+matplotlib>=3.5.2
+numpy>=1.22.3
+tensorflow-macos>=2.8.0
+tensorflow-metal>=0.4.0
+tensorboard>=2.8.0
+pandas>=1.2.3
+opencv-python>=4.5.5.64
+
