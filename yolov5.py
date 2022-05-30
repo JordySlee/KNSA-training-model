@@ -39,3 +39,5 @@ results = model(images, size=640)
 
 results.print()
 results.show()
+
+print(results.pandas().xyxy)
