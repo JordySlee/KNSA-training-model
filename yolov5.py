@@ -27,6 +27,8 @@ model = torch.hub.load(path_to_local_repo, 'custom', path=f'{path_to_local_repo}
 #     images.append(img)
 
 model.max_det = 5
+model.conf = 0.4
+model.iou = 0.1
 
 images = []
 
@@ -37,5 +39,15 @@ for i in range(5):
 
 results = model(images, size=640)
 
-results.print()
+index = 0
+for image in results.pandas().xyxy:
+    total_score = 0
+    for score in image['name']:
+        total_score += int(score)
+    print(f"Image{index}.jpg: {total_score}")
+    index += 1
+
+
+
 results.show()
+# results.save()
