@@ -27,8 +27,9 @@ model = torch.hub.load(path_to_local_repo, 'custom', path=f'{path_to_local_repo}
 #     images.append(img)
 
 model.max_det = 5
-model.conf = 0.4
-model.iou = 0.1
+# Change minimum confidence or interference of union in necessary
+# model.conf = 0.4
+# model.iou = 0.1
 
 images = []
 
@@ -50,4 +51,5 @@ for image in results.pandas().xyxy:
 
 
 results.show()
+# When enables, creats a folder named exp[number of existing exps + 1] in runs/detect
 # results.save()
