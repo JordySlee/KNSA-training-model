@@ -2,9 +2,9 @@
 
 # Authors
 
-Jordy Slee <br>
-Steff Burgering
-Samuel Kuik
+Jordy Slee - 608452<br>
+Steff Burgering - 630890<br>
+Samuel Kuik - 580221<br>
 
 # Pro-tip
 
