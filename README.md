@@ -2,7 +2,7 @@
 
 # Authors
 
-Jordy Slee
+Jordy Slee \n
 Steff Burgering
 Samuel Kuik
 
