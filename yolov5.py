@@ -2,14 +2,15 @@ import torch
 import cv2
 import os, os.path
 
-# Rename this to path of YOUR local yolov5 repo
-path_to_local_repo = '/Users/samuelkuik/Desktop/yolov5/yolov5'
+
+path_to_local_repo = 'yolov5-repository/yolov5'
+
 # path=f'{path_to_local_repo}/runs/train/LATEST EXP/weights/best.pt'
-model = torch.hub.load(path_to_local_repo, 'custom', path=f'{path_to_local_repo}/runs/train/exp13/weights/best.pt', source='local')
+model = torch.hub.load(path_to_local_repo, "custom", path=f'{path_to_local_repo}/runs/train/exp15/weights/best.pt', source='local')
 
 # When using the complete dataset:
-# Copy folder 'New Complete set' from onedrive
-# rename to 'complete-set'
+# Copy folder with complete dataset to the root of this repository (~/KNSA_Project/KNSA-training-model/{PLACE DATASET HERE})
+# rename folder to 'complete-set'
 
 # Read all files in folder
 # file_list = os.listdir("complete-set")
@@ -26,8 +27,10 @@ model = torch.hub.load(path_to_local_repo, 'custom', path=f'{path_to_local_repo}
 #     img = cv2.imread(f"complete-set/{file}")
 #     images.append(img)
 
+# Comment out lines 34-39
+
 model.max_det = 5
-# Change minimum confidence or interference of union in necessary
+# Change minimum confidence or interference of union if necessary
 # model.conf = 0.4
 # model.iou = 0.1
 
@@ -47,8 +50,6 @@ for image in results.pandas().xyxy:
         total_score += int(score)
     print(f"Image{index}.jpg: {total_score}")
     index += 1
-
-
 
 results.show()
 # When enables, creats a folder named exp[number of existing exps + 1] in runs/detect
